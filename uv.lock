@@ -1128,6 +1128,7 @@ source = { editable = "." }
 dependencies = [
     { name = "mjlab" },
     { name = "mujoco" },
+    { name = "wandb" },
 ]
 
 [package.dev-dependencies]
@@ -1142,6 +1143,7 @@ dev = [
 requires-dist = [
     { name = "mjlab", git = "https://github.com/mujocolab/mjlab.git" },
     { name = "mujoco", specifier = ">=3.2.5" },
+    { name = "wandb", specifier = ">=0.22.3" },
 ]
 
 [package.metadata.requires-dev]

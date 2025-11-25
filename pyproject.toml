@@ -8,7 +8,11 @@ version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = ["mjlab", "mujoco>=3.2.5"]
+dependencies = [
+    "mjlab",
+    "mujoco>=3.2.5",
+    "wandb>=0.22.3",
+]
 
 [project.entry-points."mjlab.tasks"]
 mjlab_go2 = "mjlab_go2.tasks"
