@@ -1,2 +1,3 @@
-import mjlab_go2.tasks
-from mjlab.scripts.play import main
+from mjlab.scripts.play import main  # noqa: F401
+
+import mjlab_go2.tasks  # noqa: F401

@@ -7,8 +7,19 @@ name = "mjlab-go2"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.10,<3.14"
-dependencies = ["mjlab[dev]", "mujoco>=3.2.5"]
+requires-python = ">=3.12"
+dependencies = ["mjlab", "mujoco>=3.2.5"]
+
+[project.entry-points."mjlab.tasks"]
+mjlab_go2 = "mjlab_go2.tasks"
+
+[dependency-groups]
+dev = [
+  "pre-commit>=4.1.0",
+  "ipykernel>=6.29.5",
+  "deptry>=0.23.0",
+  "mypy>=1.15.0",
+]
 
 [project.scripts]
 mjlab_train = "mjlab_go2.scripts.train:main"
@@ -20,4 +31,4 @@ indent-width = 2
 exclude = ["src/mjlab/third_party", "typings"]
 
 [tool.uv.sources]
-mjlab = { git = "https://github.com/mujocolab/mjlab", rev = "main" }
+mjlab = { git = "https://github.com/mujocolab/mjlab.git" }
