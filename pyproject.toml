@@ -21,18 +21,11 @@ mjlab_go2 = "mjlab_go2.tasks"
 dev = [
   "pre-commit>=4.1.0",
   "ipykernel>=6.29.5",
-  "deptry>=0.23.0",
-  "mypy>=1.15.0",
 ]
 
 [project.scripts]
 mjlab_train = "mjlab_go2.scripts.train:main"
 mjlab_play = "mjlab_go2.scripts.play:main"
-
-[tool.ruff]
-src = ["src"]
-indent-width = 2
-exclude = ["src/mjlab/third_party", "typings"]
 
 [tool.uv.sources]
 mjlab = { git = "https://github.com/mujocolab/mjlab.git" }

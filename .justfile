@@ -38,14 +38,14 @@ build target:
   @uv run hatch build --target {{target}}
 
 # Run a package
-run *args='mjlab_go2':
+run *args="mjlab_go2":
   @echo "Running..."
   @uv run {{args}}
 
 # Run wandb
-wandb WANDB_DIR='./wandb':
+wandb logdir="./wandb/latest-run/":
   @echo "Running wandb..."
-  WANDB_DIR={{WANDB_DIR}} uv run wandb beta leet
+  @uv run wandb beta leet {{logdir}}
 
 # Run code quality tools
 check:
@@ -60,6 +60,8 @@ clean:
   @find . -type d -name "__pycache__" -exec rm -rf {} +
   @find . -type d -name "*.ruff_cache" -exec rm -rf {} +
   @find . -type d -name "*.egg-info" -exec rm -rf {} +
+  @find . -type d -name "logs" -exec rm -rf {} +
+  @find . -type d -name "wandb" -exec rm -rf {} +
 
 # Format the project
 format:
