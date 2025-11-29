@@ -111,7 +111,7 @@ def unitree_go2_rough_env_cfg(play: bool = False) -> ManagerBasedRlEnvCfg:
 
 
 def unitree_go2_flat_env_cfg(play: bool = False) -> ManagerBasedRlEnvCfg:
-    """Create Unitree Go1 flat terrain velocity configuration."""
+    """Create Unitree Go2 flat terrain velocity configuration."""
     cfg = unitree_go2_rough_env_cfg(play=play)
 
     # Switch to flat terrain.

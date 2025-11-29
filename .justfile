@@ -7,6 +7,7 @@ alias u := update
 alias p := pre_commit
 alias b := build
 alias r := run
+alias t := tensorboard
 alias w := wandb
 alias ch := check
 alias c := clean
@@ -38,9 +39,14 @@ build target:
   @uv run hatch build --target {{target}}
 
 # Run a package
-run *args="mjlab_go2":
+run package="mjlab_train" *args="":
   @echo "Running..."
-  @uv run {{args}}
+  @MUJOCO_GL=egl uv run {{package}} {{args}}
+
+# Run tensorboard
+tensorboard logdir="./logs/rsl_rl/":
+  @echo "Running tensorboard..."
+  @uv run tensorboard --logdir {{logdir}}
 
 # Run wandb
 wandb logdir="./wandb/latest-run/":

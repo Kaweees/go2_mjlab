@@ -37,7 +37,6 @@ def get_spec() -> mujoco.MjSpec:
 
 # Rotor inertia.
 # Ref: https://github.com/unitreerobotics/unitree_ros/blob/master/robots/go2_description/urdf/go2_description.urdf#L257
-# https://github.com/unitreerobotics/unitree_ros/blob/master/robots/go1_description/urdf/go1.urdf#L515
 # Extracted Ixx (rotation along x-axis).
 ROTOR_INERTIA = 0.000111842
 
@@ -140,7 +139,7 @@ GO2_ARTICULATION = EntityArticulationInfoCfg(
 
 
 def get_go2_robot_cfg() -> EntityCfg:
-    """Get a fresh Go1 robot configuration instance.
+    """Get a fresh Go2 robot configuration instance.
 
     Returns a new EntityCfg instance each time to avoid mutation issues when
     the config is shared across multiple places.
