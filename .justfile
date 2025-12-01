@@ -39,7 +39,7 @@ build target:
   @uv run hatch build --target {{target}}
 
 # Run a package
-run package="mjlab_train" *args="":
+run package="go2_train" *args="":
   @echo "Running..."
   @MUJOCO_GL=egl uv run {{package}} {{args}}
 

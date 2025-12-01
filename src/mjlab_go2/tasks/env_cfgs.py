@@ -1,4 +1,4 @@
-"""Unitree Go2 velocity environment configurations."""
+"""Unitree Go2 velocity tracking environment configurations."""
 
 from mjlab.envs import ManagerBasedRlEnvCfg
 from mjlab.envs.mdp.actions import JointPositionActionCfg

@@ -1,4 +1,4 @@
-from mjlab.scripts.train import main
+from mjlab.scripts.list_envs import main
 
 import mjlab_go2.tasks  # noqa: F401
 

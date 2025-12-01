@@ -41,8 +41,8 @@ def get_spec() -> mujoco.MjSpec:
 ROTOR_INERTIA = 0.000111842
 
 # Gearbox.
-HIP_GEAR_RATIO = 6
-KNEE_GEAR_RATIO = HIP_GEAR_RATIO * 1.5
+HIP_GEAR_RATIO = 6.33
+KNEE_GEAR_RATIO = HIP_GEAR_RATIO * 1.92
 
 HIP_ACTUATOR = ElectricActuator(
     reflected_inertia=reflected_inertia(ROTOR_INERTIA, HIP_GEAR_RATIO),
@@ -161,3 +161,11 @@ for a in GO2_ARTICULATION.actuators:
     assert e is not None
     for n in names:
         GO2_ACTION_SCALE[n] = 0.25 * e / s
+
+if __name__ == "__main__":
+    import mujoco.viewer as viewer
+    from mjlab.entity.entity import Entity
+
+    robot = Entity(get_go2_robot_cfg())
+
+    viewer.launch(robot.spec.compile())
