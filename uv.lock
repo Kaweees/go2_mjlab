@@ -556,6 +556,35 @@ wheels = [
 ]
 
 [[package]]
+name = "go2-mjlab"
+version = "0.1.0"
+source = { editable = "." }
+dependencies = [
+    { name = "mjlab" },
+    { name = "mujoco" },
+    { name = "wandb" },
+]
+
+[package.dev-dependencies]
+dev = [
+    { name = "ipykernel" },
+    { name = "pre-commit" },
+]
+
+[package.metadata]
+requires-dist = [
+    { name = "mjlab", git = "https://github.com/mujocolab/mjlab.git" },
+    { name = "mujoco", specifier = ">=3.2.5" },
+    { name = "wandb", specifier = ">=0.22.3" },
+]
+
+[package.metadata.requires-dev]
+dev = [
+    { name = "ipykernel", specifier = ">=6.29.5" },
+    { name = "pre-commit", specifier = ">=4.1.0" },
+]
+
+[[package]]
 name = "grpcio"
 version = "1.76.0"
 source = { registry = "https://pypi.org/simple" }
@@ -1097,35 +1126,6 @@ dependencies = [
     { name = "viser" },
     { name = "wandb" },
     { name = "warp-lang" },
-]
-
-[[package]]
-name = "mjlab-go2"
-version = "0.1.0"
-source = { editable = "." }
-dependencies = [
-    { name = "mjlab" },
-    { name = "mujoco" },
-    { name = "wandb" },
-]
-
-[package.dev-dependencies]
-dev = [
-    { name = "ipykernel" },
-    { name = "pre-commit" },
-]
-
-[package.metadata]
-requires-dist = [
-    { name = "mjlab", git = "https://github.com/mujocolab/mjlab.git" },
-    { name = "mujoco", specifier = ">=3.2.5" },
-    { name = "wandb", specifier = ">=0.22.3" },
-]
-
-[package.metadata.requires-dev]
-dev = [
-    { name = "ipykernel", specifier = ">=6.29.5" },
-    { name = "pre-commit", specifier = ">=4.1.0" },
 ]
 
 [[package]]

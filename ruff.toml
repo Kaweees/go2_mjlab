@@ -32,7 +32,7 @@ ignore = [
 select = ["E", "F", "I"]
 
 [lint.isort]
-known-first-party = ["mjlab_go2"]
+known-first-party = ["go2_mjlab"]
 
 [lint.pydocstyle]
 convention = "google"

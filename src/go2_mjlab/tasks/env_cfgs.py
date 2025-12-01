@@ -7,7 +7,7 @@ from mjlab.sensor import ContactMatch, ContactSensorCfg
 from mjlab.tasks.velocity import mdp
 from mjlab.tasks.velocity.velocity_env_cfg import make_velocity_env_cfg
 
-from mjlab_go2.robot.go2_constants import (
+from go2_mjlab.robot.go2_constants import (
     GO2_ACTION_SCALE,
     get_go2_robot_cfg,
 )

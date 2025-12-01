@@ -3,24 +3,28 @@ requires = ["uv_build>=0.8.19,<0.9.0"]
 build-backend = "uv_build"
 
 [project]
-name = "mjlab_go2"
+name = "go2_mjlab"
 version = "0.1.0"
 description = "Mjlab tasks for the Unitree Go2."
-readme = "README.md"
+authors = [
+  { name = "Miguel Villa Floran", email = "miguel.villafloran@gmail.com" },
+]
 requires-python = ">=3.12"
+readme = "README.md"
+
 dependencies = ["mjlab", "mujoco>=3.2.5", "wandb>=0.22.3"]
 
 [project.entry-points."mjlab.tasks"]
-mjlab_go2 = "mjlab_go2.tasks"
+go2_mjlab = "go2_mjlab.tasks"
 
 [dependency-groups]
 dev = ["pre-commit>=4.1.0", "ipykernel>=6.29.5"]
 
 [project.scripts]
-mjlab_go2 = "mjlab_go2:main"
-go2_train = "mjlab_go2.scripts.train:main"
-go2_play = "mjlab_go2.scripts.play:main"
-go2_list_envs = "mjlab_go2.scripts.list_envs:main"
+go2_mjlab = "go2_mjlab:main"
+go2_train = "go2_mjlab.scripts.train:main"
+go2_play = "go2_mjlab.scripts.play:main"
+go2_list_envs = "go2_mjlab.scripts.list_envs:main"
 
 [tool.uv.sources]
 mjlab = { git = "https://github.com/mujocolab/mjlab.git" }
