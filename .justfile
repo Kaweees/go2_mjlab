@@ -26,7 +26,7 @@ install:
 update:
   @echo "Updating..."
   @uv sync --upgrade
-  @uv run pre-commit pre-commit autoupdate
+  @uv run pre-commit autoupdate
 
 # Run pre-commit
 pre_commit:
@@ -56,7 +56,7 @@ wandb logdir="./wandb/latest-run/":
 # Run web server
 web:
   @echo "Running web server..."
-  @uv run viser-build-client --out-dir viser-client
+  @uv run viser-build-client --out-dir public/viser-client
   @mkdir -p ./public/recordings/
   @find ./recordings -name "*.viser" -exec cp {} ./public/recordings/ \;
 
