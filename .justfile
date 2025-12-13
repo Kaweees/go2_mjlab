@@ -53,6 +53,13 @@ wandb logdir="./wandb/latest-run/":
   @echo "Running wandb..."
   @uv run wandb beta leet {{logdir}}
 
+# Run web server
+web:
+  @echo "Running web server..."
+  @uv run viser-build-client --out-dir viser-client
+  @mkdir -p ./public/recordings/
+  @find ./recordings -name "*.viser" -exec cp {} ./public/recordings/ \;
+
 # Run code quality tools
 check:
   @echo "Checking..."
@@ -67,6 +74,7 @@ clean:
   @find . -type d -name "*.ruff_cache" -exec rm -rf {} +
   @find . -type d -name "*.egg-info" -exec rm -rf {} +
   @find . -type d -name "logs" -exec rm -rf {} +
+  @find . -type d -name "viser-client" -exec rm -rf {} +
   @find . -type d -name "wandb" -exec rm -rf {} +
 
 # Format the project
