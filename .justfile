@@ -56,7 +56,7 @@ wandb logdir="./wandb/latest-run/":
 # Run web server
 web:
   @echo "Running web server..."
-  @uv run viser-build-client --out-dir viser-client
+  @uv run viser-build-client --out-dir public/viser-client
   @mkdir -p ./public/recordings/
   @find ./recordings -name "*.viser" -exec cp {} ./public/recordings/ \;
 
