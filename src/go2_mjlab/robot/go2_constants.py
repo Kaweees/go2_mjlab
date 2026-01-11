@@ -1,6 +1,5 @@
 """Unitree Go2 constants."""
 
-import os
 from pathlib import Path
 
 import mujoco
@@ -14,7 +13,7 @@ from mjlab.utils.spec_config import CollisionCfg
 # MJCF and assets.
 ##
 
-GO2_XML: Path = Path(os.path.dirname(__file__)) / "xmls" / "go2.xml"
+GO2_XML: Path = Path(__file__).parent / "xmls" / "go2.xml"
 
 assert GO2_XML.exists(), f"XML not found: {GO2_XML}"
 
@@ -80,7 +79,7 @@ GO2_KNEE_ACTUATOR_CFG = BuiltinPositionActuatorCfg(
 )
 
 ##
-# Keyframes.
+# Keyframe config.
 ##
 
 
@@ -99,7 +98,7 @@ INIT_STATE = EntityCfg.InitialStateCfg(
 # Collision config.
 ##
 
-_foot_regex = "^[FR][LR]_foot_collision$"
+_foot_regex = r"^[FR][LR]_foot_collision$"
 
 # This disables all collisions except the feet.
 # Furthermore, feet self collisions are disabled.
@@ -126,7 +125,7 @@ FULL_COLLISION = CollisionCfg(
 )
 
 ##
-# Final config.
+# Articulation config.
 ##
 
 GO2_ARTICULATION = EntityArticulationInfoCfg(
@@ -136,6 +135,10 @@ GO2_ARTICULATION = EntityArticulationInfoCfg(
     ),
     soft_joint_pos_limit_factor=0.9,
 )
+
+##
+# Final config.
+##
 
 
 def get_go2_robot_cfg() -> EntityCfg:
